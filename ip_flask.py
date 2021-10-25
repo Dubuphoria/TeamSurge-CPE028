@@ -1,29 +1,33 @@
 from flask import *
-from functions import userIP
-from requests import get
-import json
+from ip_api import userIP
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    #<<<<<<<<<<<<<<<<<<<<<<<<------- initialNewdata
-    data = userIP('0.0.0.0')
-    newData = data.json()
-    return render_template('index.html',newData=newData)
-
-@app.route('/API', methods=['POST'])
-def API():
     if request.method == 'POST':
-        data = userIP(request.form['ipaddress'])
-        newData = data.json()
-    #<<<<<<<<<<<<<<<<<<<<<<<<------- newData handling html
-        if 'error' in newData: 
+        searchInput = request.form.get('search')
+        parsed_info = userIP(searchInput).json()
+        if 'error' in parsed_info:
             error = True
-            reason = newData['reason']
-            return render_template('index_error.html', error=error, reason=reason)
+            reason = parsed_info['reason']
+            ip_address = parsed_info['ip']
+            return render_template('index_error.html', error=error, reason=reason, ip_address=ip_address)
         else:
-             return render_template('index.html',newData=newData)
+            ip_version = parsed_info['version']
+            ip_address = parsed_info['ip']
+            city = parsed_info['city']
+            region = parsed_info['region']
+            latitude = parsed_info['latitude']
+            longitude = parsed_info['longitude']
+            timezone = parsed_info['timezone']
+            org = parsed_info['org']
+            asn = parsed_info['asn']
+            print(ip_address)
+            return render_template('index.html', ip_address=ip_address, ip_version=ip_version, city=city, 
+                                    region=region, latitude=latitude, longitude=longitude, timezone=timezone, org=org, asn=asn)
+    elif request.method == 'GET':
+        return render_template('index.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == '_main_':
+    app.run(debug=True, host='0.0.0.0', port=5000)
