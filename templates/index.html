@@ -1,23 +1,71 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="static/test.css">
+        <title>Team Surge</title>
+        <link rel="stylesheet" href="..\static\style.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>
-            <form action="/API" method="post">
-                IP ADDRESS: <input type="text" name="ipaddress"> 
-                <input type="submit" name= "form" value="Submit"/>
+        <h1>
+            Team Surge IP and Location Finder
+        </h1>
+        
+            <form class="searchBar" method="POST" action="/">
+                <input type="text" placeholder="Enter IP Address: " name="search">
+                <button type="submit">Submit</button>
             </form>
             
-        </div>
-        <table>
-            {% for key, value in newData.items() %}
-               <tr>
-                    <th> {{ key }} </th>
-                    <td> {{ value }} </td>
-               </tr>
-            {% endfor %}
-        </table>
+                <table class="center">
+                    <tr>
+                        <td>IP Address </td>
+                        <td> {{ ip_address }} </td>
+                    </tr>
+               
+                    <tr>
+                        <td>Version </td>
+                        <td> {{ ip_version }} </td>
+                    </tr>
+               
+                    <tr>
+                        <td>City </td>
+                        <td> {{ city }} </td>
+                    </tr>
+
+                    <tr>
+                        <td>Latitude </td>
+                        <td> {{ latitude }} </td>
+                    </tr>
+
+                    <tr>
+                        <td>Longitude </td>
+                        <td> {{ longitude }} </td>
+                    </tr>
+
+                    <tr>
+                        <td>Timezone </td>
+                        <td> {{ timezone }} </td>
+                    </tr>
+
+                    <tr>
+                        <td>Org </td>
+                        <td> {{ org }} </td>
+                    </tr>
+
+                    <tr>
+                        <td>ASN: </td>
+                        <td> {{ asn }} </td>
+                    </tr>
+                </table>
     </body>
+
+    <footer>
+        <p>Team Surge Members:</p>
+        <ol>
+            <li>Junaid Bantuas</li>
+            <li>Reinhold Lucana</li>
+            <li>John Edward Sam Matienzo</li>
+        </ol>
+    </footer>
 </html>
