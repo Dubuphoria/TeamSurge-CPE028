@@ -25,9 +25,10 @@ def index():
             asn = parsed_info['asn']
             print(ip_address)
             return render_template('index.html', ip_address=ip_address, ip_version=ip_version, city=city, 
-                                    region=region, latitude=latitude, longitude=longitude, timezone=timezone, org=org, asn=asn)
+                                    region=region, latitude=latitude, longitude=longitude, timezone=timezone,
+                                    org=org, asn=asn)
     elif request.method == 'GET':
         return render_template('index.html')
 
-if __name__ == '_main_':
+if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
