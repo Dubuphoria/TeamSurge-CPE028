@@ -32,5 +32,5 @@ def index():
     elif request.method == 'GET':
         return render_template('index.html') #If not POST, get will be called returning the regular empty index file.
 
-if __name__ == '__main__':
+if __name__ == '__main__': #========= Just for easier python running 
     app.run(debug=True, host='0.0.0.0', port=5000)
