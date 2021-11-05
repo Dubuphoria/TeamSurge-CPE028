@@ -15,6 +15,7 @@ def index():
             reason = parsed_info['reason']
             ip_address = parsed_info['ip'] # Parsing specific data from the Json file gathered.
             return render_template('index_error.html', error=error, reason=reason, ip_address=ip_address) # Stores the information to be displayed in HTML.
+            
         else: #If the parsed_info returns correct, it will display the selected data from the json.
             ip_version = parsed_info['version'] # Parsing specific data from the Json file gathered. Lines 19-27
             ip_address = parsed_info['ip']
