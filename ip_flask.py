@@ -15,20 +15,20 @@ def index():
             reason = parsed_info['reason']
             ip_address = parsed_info['ip'] # Parsing specific data from the Json file gathered.
             return render_template('index_error.html', error=error, reason=reason, ip_address=ip_address) # Stores the information to be displayed in HTML.
-            
+
         else: #If the parsed_info returns correct, it will display the selected data from the json.
             ip_version = parsed_info['version'] # Parsing specific data from the Json file gathered. Lines 19-27
             ip_address = parsed_info['ip']
             city = parsed_info['city']
             region = parsed_info['region']
             latitude = parsed_info['latitude']
-            longitude = parsed_info['longitude']
+            LONGit = parsed_info['longitude']
             timezone = parsed_info['timezone']
             org = parsed_info['org']
             asn = parsed_info['asn']
             print(ip_address)
             return render_template('index.html', ip_address=ip_address, ip_version=ip_version, city=city, 
-                                    region=region, latitude=latitude, longitude=longitude, timezone=timezone,
+                                    region=region, latitude=latitude, longitude=LONGit, timezone=timezone,
                                     org=org, asn=asn) #Uses the parsed data and sends it to HTML file for it to be displayed using Jinja.
     elif request.method == 'GET':
         return render_template('index.html') #If not POST, get will be called returning the regular empty index file.
