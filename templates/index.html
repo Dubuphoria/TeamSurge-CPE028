@@ -2,60 +2,65 @@
 <html>
     <head>
         <title>Team Surge</title>
-        <link rel="stylesheet" href="..\static\style.css">
+        <link rel="stylesheet" href="..\static\style.css">      <!-- Initializing the style.css for use -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">      <!-- To make the webpage responsive -->
+
     </head>
     <body>
+
+        <!-- Header of the Webpage -->
         <h1>
             Team Surge IP and Location Finder
         </h1>
         
-            <form class="searchBar" method="POST" action="/">
-                <input type="text" placeholder="Enter IP Address: " name="search">
-                <button type="submit">Submit</button>
+        <!-- Search bar HTML codes -->
+            <form class="searchBar" method="POST" action="/">       <!-- Implementing POST method to the webpage -->
+                <input type="text" placeholder="Enter IP Address: " name="search">      <!-- Text field for user input -->
+                <button type="submit">Submit</button>       <!-- Submit button -->
             </form>
             
+            <!-- Table where all the results will be displayed -->
                 <table class="center">
                     <tr>
                         <td>IP Address </td>
-                        <td> {{ ip_address }} </td>
+                        <td> {{ ip_address }} </td>     <!-- Jinja templates to get the values from the JSON file -->
                     </tr>
                
                     <tr>
                         <td>Version </td>
-                        <td> {{ ip_version }} </td>
+                        <td> {{ ip_version }} </td>     <!-- Jinja templates to get the values from the JSON file -->
                     </tr>
                
                     <tr>
                         <td>City </td>
-                        <td> {{ city }} </td>
+                        <td> {{ city }} </td>       <!-- Jinja templates to get the values from the JSON file -->
                     </tr>
 
                     <tr>
                         <td>Latitude </td>
-                        <td> {{ latitude }} </td>
+                        <td> {{ latitude }} </td>       <!-- Jinja templates to get the values from the JSON file -->
                     </tr>
 
                     <tr>
                         <td>Longitude </td>
-                        <td> {{ longitude }} </td>
+                        <td> {{ longitude }} </td>      <!-- Jinja templates to get the values from the JSON file -->
                     </tr>
 
                     <tr>
                         <td>Timezone </td>
-                        <td> {{ timezone }} </td>
+                        <td> {{ timezone }} </td>       <!-- Jinja templates to get the values from the JSON file -->
                     </tr>
 
                     <tr>
                         <td>Org </td>
-                        <td> {{ org }} </td>
+                        <td> {{ org }} </td>        <!-- Jinja templates to get the values from the JSON file -->
                     </tr>
 
                     <tr>
                         <td>ASN: </td>
-                        <td> {{ asn }} </td>
+                        <td> {{ asn }} </td>        <!-- Jinja templates to get the values from the JSON file -->
                     </tr>
                 </table>
     </body>
