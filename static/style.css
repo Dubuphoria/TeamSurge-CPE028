@@ -2,10 +2,12 @@
     box-sizing: border-box;
   }
   
+  /* Initializing font-family for the webpage */
   body {
     font-family: Arial, Helvetica, sans-serif;
   }
   
+  /* Header style */
   h1{
     color: black;
     background: rgb(18, 190, 173);
@@ -14,10 +16,12 @@
     padding: 50px;
   }
   
+  /* Form element padding size */
   form {
     padding: 20px;
   }
 
+  /* Search bar input styiling  */
   form.searchBar input[type=text] {
     margin-left: 15%;
     width: 50%;
@@ -27,6 +31,7 @@
     border: 2px solid black;
   }
   
+  /* Search bar button styiling  */
   form.searchBar button {
     width: 20%;
     padding: 10px;
@@ -41,7 +46,7 @@
     background: rgb(18, 190, 173);
   }
 
-
+/* Table styiling  */
   table, td{
     border: 2px solid black;
     border-collapse: collapse;
@@ -54,7 +59,7 @@
     width: 50%;
   }
 
-tr:hover {background-color: rgb(18, 190, 173)}
+tr:hover {background-color: rgb(18, 190, 173)} /* Hover background color on Table rows (tr) */
 
 td:nth-child(even){
     background-color: #D6EEEE;
@@ -65,6 +70,7 @@ td:nth-child(even){
     margin-right: auto;
 }
 
+/* Footer styiling */
 footer{
     color: black;
     background: rgb(18, 190, 173);
