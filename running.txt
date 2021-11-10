@@ -1,0 +1,2 @@
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS               NAMES
+b6b6cfe968b2        apiapplication      "/bin/sh -c 'python3…"   33 seconds ago      Exited (1) 29 seconds ago                       apprun
