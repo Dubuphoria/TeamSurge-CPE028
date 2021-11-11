@@ -20,6 +20,8 @@ echo "COPY ./ip_flask.py /home/myapp/" >> tempdir/Dockerfile
 echo "COPY ./ip_api.py /home/myapp/" >> tempdir/Dockerfile
 echo "EXPOSE 5050" >> tempdir/Dockerfile
 echo "CMD python3 /home/myapp/ip_flask.py" >> tempdir/Dockerfile
+echo "CMD python3 /home/myapp/test_ip_api.py" >> tempdir/Dockerfile
+echo "CMD python3 /home/myapp/test_ip_flask.py" >> tempdir/Dockerfile
 cd tempdir
 docker build -t apiapplication .
 docker run -t -d -p 5050:5050 --name apprun apiapplication
