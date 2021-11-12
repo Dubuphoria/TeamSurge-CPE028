@@ -14,6 +14,10 @@
             Team Surge IP and Location Finder
         </h1>
 
+        <form class="searchBar" method="POST" action="/">       <!-- Implementing POST method to the webpage -->
+            <input type="button" value="Back" onclick="history.back()" name="goBack">      <!-- Back Button -->
+        </form>
+
         <div>Error!</div> <!-- Error message -->
         <ul>
             <li>Reason: {{ reason }} </li>      <!-- Jinja templates to get the values from the JSON file -->
